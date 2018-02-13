@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
 using System.Threading.Tasks;
-using System.Reflection;
+using MyTunes.Shared;
 
 namespace MyTunes
 {
 	public static class SongLoader
 	{
 		const string Filename = "songs.json";
+        public static IStreamLoader loader { get; set; }
 
-		public static async Task<IEnumerable<Song>> Load()
+        public static async Task<IEnumerable<Song>> Load()
 		{
 			using (var reader = new StreamReader(OpenData())) {
 				return JsonConvert.DeserializeObject<List<Song>>(await reader.ReadToEndAsync());
@@ -20,8 +20,8 @@ namespace MyTunes
 
 		private static Stream OpenData()
 		{
-			// TODO: add code to open file here.
-			return null;
+            if (null == loader) throw new System.Exception("An IStreamLoader must be set prior to using this class.");
+            else return loader.GetStreamForFilename(Filename);
 		}
 	}
 }

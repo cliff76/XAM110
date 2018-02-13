@@ -10,6 +10,7 @@ namespace MyTunes
 		protected async override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);
+            Injector.inject(new AndroidDependencyDictionary(ApplicationContext));
 
 			var data = await SongLoader.Load();
 

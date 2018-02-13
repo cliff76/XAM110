@@ -15,7 +15,7 @@ namespace MyTunes
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
 			window = new UIWindow(UIScreen.MainScreen.Bounds);
-
+            Injector.inject(new IOSDependencyDictionary());
 			controller = new MyTunesViewController();
 			window.RootViewController = controller;
 			window.MakeKeyAndVisible();

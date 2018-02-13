@@ -154,6 +154,8 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="ViewControllerSource.cs" />
     <Compile Include="MyTunesViewController.cs" />
+    <Compile Include="StreamLoader.cs" />
+    <Compile Include="IOSDependencyDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyTunes.Shared\MyTunes.Shared.csproj">

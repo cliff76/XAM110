@@ -158,9 +158,9 @@
     <Compile Include="IOSDependencyDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyTunes.Shared\MyTunes.Shared.csproj">
-      <Project>{6F84544D-821D-4170-81F4-2E2DAEA42793}</Project>
-      <Name>MyTunes.Shared</Name>
+    <ProjectReference Include="..\MyTunes.NetStandard\MyTunes.NetStandard.csproj">
+      <Project>{DB41CFC6-4B06-492E-99A0-F7CCCA6F9AAB}</Project>
+      <Name>MyTunes.NetStandard</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
